@@ -1,0 +1,74 @@
+:root {
+  font-family: "Segoe UI", sans-serif;
+  color: #101828;
+  background:
+    radial-gradient(circle at top left, #dde7ff 0, transparent 28%),
+    linear-gradient(135deg, #eef3ff 0%, #f8fbff 45%, #eef7f3 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.app-shell {
+  min-height: 100vh;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 48px 20px 64px;
+}
+
+.hero {
+  padding: 32px;
+  border: 1px solid #d7e0ea;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(8px);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  color: #475467;
+}
+
+.hero h1,
+.panel h2 {
+  margin: 0 0 12px;
+}
+
+.intro,
+.panel p,
+.panel li {
+  line-height: 1.6;
+}
+
+.panel {
+  margin-top: 20px;
+  padding: 24px 28px;
+  border: 1px solid #d7e0ea;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.panel ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 20px 14px 40px;
+  }
+
+  .hero,
+  .panel {
+    padding: 20px;
+  }
+}
+
