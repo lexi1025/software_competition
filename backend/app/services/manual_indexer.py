@@ -5,9 +5,10 @@ from app.schemas.manual import ManualRegisterRequest, ManualRegisterResponse
 
 
 class ManualIndexer:
-    def register_manual(
+    async def register_manual(
         self, payload: ManualRegisterRequest
     ) -> ManualRegisterResponse:
+        # 当前仍是轻量路径检查；后续可替换为异步 PDF 解析和索引构建。
         file_path = Path(payload.file_path)
         if not file_path.is_absolute():
             file_path = Path.cwd() / file_path
@@ -22,4 +23,3 @@ class ManualIndexer:
             status="registered",
             next_step="Implement PDF parsing and page-level indexing.",
         )
-

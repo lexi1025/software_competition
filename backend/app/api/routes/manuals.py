@@ -1,17 +1,21 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Request
 
 from app.schemas.manual import ManualRegisterRequest, ManualRegisterResponse
+from app.schemas.response import ApiResponse, success_response
 from app.services.manual_indexer import ManualIndexer
 
 
 router = APIRouter()
 
 
-@router.post("/register", response_model=ManualRegisterResponse)
-def register_manual(payload: ManualRegisterRequest) -> ManualRegisterResponse:
+@router.post("/register", response_model=ApiResponse[ManualRegisterResponse])
+async def register_manual(
+    request: Request, payload: ManualRegisterRequest
+) -> ApiResponse[ManualRegisterResponse]:
+    # 路由层保持轻量：接收 HTTP 输入，委托 service，再包装成公开 API envelope。
     indexer = ManualIndexer()
     try:
-        return indexer.register_manual(payload)
+        result = await indexer.register_manual(payload)
     except FileNotFoundError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc
-
+    return success_response(data=result, trace_id=request.state.trace_id)

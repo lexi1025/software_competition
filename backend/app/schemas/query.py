@@ -1,8 +1,14 @@
+from typing import Annotated
+
 from pydantic import BaseModel, Field
+from pydantic import StringConstraints
+
+
+NonEmptyStr = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1)]
 
 
 class QueryRequest(BaseModel):
-    question: str = Field(description="Fault question or task request.")
+    question: NonEmptyStr = Field(description="Fault question or task request.")
     device_name: str | None = None
     device_model: str | None = None
 
@@ -22,4 +28,3 @@ class QueryResponse(BaseModel):
     answer: str
     plan: list[PlanStep]
     evidence: list[EvidenceItem]
-
