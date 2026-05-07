@@ -66,7 +66,7 @@ async def validation_exception_handler(
     trace_id = _get_trace_id(request)
     payload = error_response(
         code="VALIDATION_ERROR",
-        message="request validation failed",
+        message="请求参数校验失败",
         details={"errors": jsonable_encoder(exc.errors())},
         trace_id=trace_id,
     )
@@ -84,7 +84,7 @@ async def unhandled_exception_handler(request: Request, exc: Exception) -> JSONR
     details = {"error": str(exc)} if settings.debug else None
     payload = error_response(
         code="INTERNAL_SERVER_ERROR",
-        message="internal server error",
+        message="服务内部异常",
         details=details,
         trace_id=trace_id,
     )
@@ -95,7 +95,7 @@ async def unhandled_exception_handler(request: Request, exc: Exception) -> JSONR
     )
 
 
-@app.get("/", tags=["system"])
+@app.get("/", tags=["系统"])
 async def root(request: Request):
     return success_response(
         data={"app_name": settings.app_name, "app_env": settings.app_env},

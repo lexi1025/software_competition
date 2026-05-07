@@ -5,7 +5,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    app_name: str = "Equipment Maintenance Agent"
+    app_name: str = "设备检修智能辅助系统"
     app_env: str = "development"
     debug: bool = False
     api_prefix: str = "/api"

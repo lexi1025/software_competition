@@ -14,12 +14,12 @@ class ManualIndexer:
             file_path = Path.cwd() / file_path
 
         if not file_path.exists():
-            raise FileNotFoundError(f"Manual not found: {file_path}")
+            raise FileNotFoundError(f"未找到维修手册文件：{file_path}")
 
         return ManualRegisterResponse(
             manual_id=str(uuid4()),
             file_path=str(file_path.resolve()),
             page_count=None,
-            status="registered",
-            next_step="Implement PDF parsing and page-level indexing.",
+            status="已注册",
+            next_step="下一步需要接入 PDF 解析和按页索引构建流程。",
         )

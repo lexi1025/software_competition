@@ -1,11 +1,10 @@
-# Delivery Checklist
+# 交付清单
 
-- requirements analysis document
-- function design document
-- product manual
-- test report
-- deployment guide
-- source code package
-- demo presentation
-- demo video
-
+- 需求分析文档
+- 功能设计文档
+- 产品说明书
+- 测试报告
+- 部署文档
+- 源代码包
+- 演示 PPT
+- 演示视频

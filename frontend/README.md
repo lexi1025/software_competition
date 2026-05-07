@@ -1,11 +1,10 @@
-# Frontend
+# 前端说明
 
-Vite + React client for the competition demo.
+前端基于 Vite + React，当前用于比赛演示界面。
 
-## Planned screens
+## 规划中的页面
 
-- manual registration
-- fault query with evidence references
-- SOP card view
-- knowledge submission and review
-
+- 维修手册注册
+- 带证据引用的故障查询
+- SOP 作业卡展示
+- 知识提交与审核

@@ -1,7 +1,6 @@
-# Data Layout
+# 数据目录说明
 
-- `raw/manuals/`: source PDFs and original assets
-- `processed/manual_pages/`: parsed page outputs and chunks
-- `indexes/`: retrieval indexes and embeddings
-- `uploads/`: runtime uploads from users
-
+- `raw/manuals/`：原始维修手册和源数据
+- `processed/manual_pages/`：解析后的分页结果与文本分块
+- `indexes/`：检索索引和向量数据
+- `uploads/`：运行时上传的用户数据

@@ -8,7 +8,7 @@ NonEmptyStr = Annotated[str, StringConstraints(strip_whitespace=True, min_length
 
 
 class QueryRequest(BaseModel):
-    question: NonEmptyStr = Field(description="Fault question or task request.")
+    question: NonEmptyStr = Field(description="故障问题或任务请求。")
     device_name: str | None = None
     device_model: str | None = None
 

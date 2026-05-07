@@ -1,11 +1,10 @@
-# Docs
+# 文档目录说明
 
-Use this directory for:
+此目录用于存放比赛交付文档，包括：
 
-- requirements analysis
-- function design document
-- product manual
-- test report
-- deployment guide
-- demo script and presentation assets
-
+- 需求分析文档
+- 功能设计文档
+- 产品说明书
+- 测试报告
+- 部署文档
+- 演示脚本和展示材料

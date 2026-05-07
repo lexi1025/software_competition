@@ -1,13 +1,12 @@
-# Backend
+# 后端说明
 
-FastAPI service for:
+后端基于 FastAPI，当前负责以下能力：
 
-- manual registration and parsing
-- retrieval and evidence assembly
-- plan -> execute harness for fault diagnosis and SOP generation
-- knowledge submission and review APIs
+- 维修手册注册与后续解析入口
+- 检索结果与证据组装
+- 面向故障诊断和作业指导的计划执行骨架
+- 知识提交与审核相关接口的预留位置
 
-## Next implementation step
+## 当前下一步
 
-Wire `ManualIndexer.register_manual()` to real PDF parsing and indexing.
-
+将 `ManualIndexer.register_manual()` 接入真实的 PDF 解析和索引构建流程。

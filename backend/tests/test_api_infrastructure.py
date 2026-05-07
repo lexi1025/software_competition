@@ -13,14 +13,14 @@ def test_root_returns_envelope() -> None:
     body = response.json()
     assert body["success"] is True
     assert body["error"] is None
-    assert body["data"]["app_name"] == "Equipment Maintenance Agent"
+    assert body["data"]["app_name"] == "设备检修智能辅助系统"
     assert response.headers["X-Request-ID"] == body["trace_id"]
 
 
 def test_query_returns_success_envelope() -> None:
     response = client.post(
         "/api/query",
-        json={"question": "engine cannot start", "device_name": "motorcycle engine"},
+        json={"question": "发动机无法启动", "device_name": "摩托车发动机"},
     )
 
     assert response.status_code == 200
@@ -48,7 +48,7 @@ def test_manual_register_missing_file_uses_error_envelope() -> None:
         "/api/manuals/register",
         json={
             "file_path": "missing.pdf",
-            "device_name": "motorcycle engine",
+            "device_name": "摩托车发动机",
         },
     )
 

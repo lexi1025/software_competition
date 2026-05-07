@@ -14,4 +14,4 @@ def test_health_check() -> None:
     assert body["success"] is True
     assert body["error"] is None
     assert body["data"]["status"] == "ok"
-    assert body["data"]["app_name"] == "Equipment Maintenance Agent"
+    assert body["data"]["app_name"] == "设备检修智能辅助系统"

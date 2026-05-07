@@ -9,10 +9,10 @@ NonEmptyStr = Annotated[str, StringConstraints(strip_whitespace=True, min_length
 
 class ManualRegisterRequest(BaseModel):
     file_path: NonEmptyStr = Field(
-        description="Absolute or project-relative path to a PDF."
+        description="PDF 文件的绝对路径或相对项目根目录的路径。"
     )
-    device_name: NonEmptyStr = Field(description="Human-readable device name.")
-    device_model: str | None = Field(default=None, description="Optional device model.")
+    device_name: NonEmptyStr = Field(description="设备名称。")
+    device_model: str | None = Field(default=None, description="可选的设备型号。")
 
 
 class ManualRegisterResponse(BaseModel):
